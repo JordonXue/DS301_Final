@@ -43,6 +43,7 @@ Dense network, Conv1D, and LSTM RMSE: 55.26480947035524
 Transformer Layer with LSTM RMSE: 47.75423378382045
 
 Visualization of performance:
+
 <img width="416" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/970c1f63-dabb-4221-88b2-f76d2d7009e6">
 
 <img width="413" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/a71d6fb3-2985-42cb-b561-f784dac01cac">
