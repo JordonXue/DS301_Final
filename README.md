@@ -23,3 +23,27 @@ Our python code is initiated in Google Colab(cloud based). In order to execute t
 To correlation between feature and target:
 ![image](https://github.com/JordonXue/DS301_Final/assets/118228743/99ad8d19-7544-4154-9c58-af253fe0baf6)
 
+The best performance of models:
+<img width="297" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/6923861d-f5af-4434-a084-9165f95f3173">
+
+Some other models we tested:
+SVM RMSE: 7.774468191169713 (although high, may be overfitting)
+GRU-LSTM-CNN RMSE: 37.52522609638047
+Bidirectional LSTM (BiLSTM), GRU, and a simple Dense network RMSE: 33.49966430726417
+GRU-LSTM Attention Layer RMSE: 57.31670565826679
+Dense network, Conv1D, and LSTM RMSE: 55.26480947035524
+Transformer Layer with LSTM RMSE: 47.75423378382045
+
+Visualization of performance:
+<img width="416" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/970c1f63-dabb-4221-88b2-f76d2d7009e6">
+<img width="413" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/a71d6fb3-2985-42cb-b561-f784dac01cac">
+<img width="382" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/b1ebd0a5-e035-42e0-a573-0ed789b1e950">
+<img width="384" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/1d021d5d-c102-4825-a06a-8402045862cf">
+<img width="383" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/a8c72b04-82f0-4e74-8175-15fdf56ee487">
+<img width="380" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/f07b586a-5f0a-49f4-a9a4-6459731ce576">
+
+
+
+
+
+
