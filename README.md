@@ -17,5 +17,9 @@ For this repository, we include a .ipynb file "301_Project.ipynb" for all the co
 Data imported are from Yahoo Finance. We imported 'AMZN', 'GOOG', 'ON', 'FTNT', 'IBM', 'CSCO', and 'NVDA' real stock price from 2010.01.01 to 2024.01.01. While NVIDIA is the target, other stocks are upstream or downstream stakeholders companies that work as feature in this task. Then we build up and tune our base LSTM model first. Followed by that, we experimented with  CNN-GRU, GRU-CNN-LSTM, BiLSTM-GRU-DenseNetwork, FasterRNN-CNN-LSTM, CNN-LSTM and BiLSTM, GRU-CNN-LSTM, BiLSTM-GRU-DenseNetwork, GRU-LSTM-Attention layers, DenseNetwork-Conv1D-LSTM, TensorFlow-LSTM models, and SVM-LogisticRegression models. We tune the models with the same technique and tested on the same data. To handle overfitting and enhance generalization, we employed dropout strategies, EarlyStopping to halt training when validation loss ceased improving, and ReduceLROnPlateau to adjust learning rates. We aim to compare the best performance of all those models. We also plotted the predicted price in comparison the actual price to visualize model performance.
 
 # Example commands to execute the code
+Our python code is initiated in Google Colab(cloud based). In order to execute the code, it's suggested to download the file， import and run them on Google Colab in order to ensure all models functions without any errors. 
 
 # Results
+To correlation between feature and target:
+![image](https://github.com/JordonXue/DS301_Final/assets/118228743/99ad8d19-7544-4154-9c58-af253fe0baf6)
+
