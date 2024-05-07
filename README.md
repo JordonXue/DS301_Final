@@ -21,29 +21,51 @@ Our python code is initiated in Google Colab(cloud based). In order to execute t
 
 # Results
 To correlation between feature and target:
+
 ![image](https://github.com/JordonXue/DS301_Final/assets/118228743/99ad8d19-7544-4154-9c58-af253fe0baf6)
 
 The best performance of models:
+
 <img width="297" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/6923861d-f5af-4434-a084-9165f95f3173">
 
 Some other models we tested:
+
 SVM RMSE: 7.774468191169713 (although high, may be overfitting)
+
 GRU-LSTM-CNN RMSE: 37.52522609638047
+
 Bidirectional LSTM (BiLSTM), GRU, and a simple Dense network RMSE: 33.49966430726417
+
 GRU-LSTM Attention Layer RMSE: 57.31670565826679
+
 Dense network, Conv1D, and LSTM RMSE: 55.26480947035524
+
 Transformer Layer with LSTM RMSE: 47.75423378382045
 
 Visualization of performance:
 <img width="416" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/970c1f63-dabb-4221-88b2-f76d2d7009e6">
+
 <img width="413" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/a71d6fb3-2985-42cb-b561-f784dac01cac">
+
 <img width="382" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/b1ebd0a5-e035-42e0-a573-0ed789b1e950">
+
 <img width="384" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/1d021d5d-c102-4825-a06a-8402045862cf">
+
 <img width="383" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/a8c72b04-82f0-4e74-8175-15fdf56ee487">
+
 <img width="380" alt="image" src="https://github.com/JordonXue/DS301_Final/assets/118228743/f07b586a-5f0a-49f4-a9a4-6459731ce576">
 
+The LSTM-GRU model emerged as the best performing model with the lowest RMSE of 8.149. This indicats that the hybrid model effectively captures both short-term and long-term dependencies in the dataset. The superior performance of the model can be attributed to the synergistic integration of LSTM and GRU layers. LSTMs excel in retaining long-term historical data, crucial for recognizing underlying patterns and trends that influence future prices over extended periods. On the other hand, GRUs provide the model with the flexibility to quickly adapt to new, short-term market dynamics and anomalies, ensuring responsiveness to immediate financial events without the computational complexity of traditional LSTMs. This combination enables a robust predictive model that is both deep in historical insight and agile in updating with new information, leading to high accuracy in predicting volatile context of stock market predictions.
 
+The BiLSTM and FasterRNN-CNN-BiLSTM models outperform the base LSTM due to their enhanced handling of complex data dependencies as well. The BiLSTM utilizes an extended look-back mechanism to capture long-term temporal patterns and trends more effectively, which is critical in stock price forecasting. The FasterRNN-CNN-BiLSTM combines RNNs, CNNs, and BiLSTMs to efficiently process sequences, extract spatial features, and understand both past and future contexts simultaneously, which enables a deeper and more comprehensive analysis of the data. Therefore, these models particularly adept at navigating the complexities of stock market data.
 
+On ther other hand, the comparative underperformance (compared with base LSTM) of other models, such as the CNN-LSTM or CNN-GRU models, underscores the complexity of the prediction task. The CNN-GRU model displayed higher errors with an RMSE of 12.325, and the CNN-LSTM is with a RMSE of 12.100. It suggests that combining convolutional layers with recurrent units might not be as effective in this scenario. The convolutional layers, although proficient at extracting spatial features, may not align well with the sequential nature of stock price data, which is heavily dependent on temporal relationships. These models may suffer from an imbalance in effectively handling the temporal dynamics after spatial processing, potentially leading to a loss of critical time-series information.
 
+# Conclusions and Future Works
+Our project has extensively explored various hybrid machine learning models to predict NVIDIA's stock prices, based on the historical stock prices of multiple major companies. We aim to find the best models by comparing it with the base LSTM model (the most popular model in stock prediction task). We focused on LSTM-based models, enhancing them with other neural network architectures like GRU and CNN to capture both temporal and spatial patterns in stock market data effectively. We also experimented with and tuned many other models we found.
 
+The major strength of our approach lies in its innovative integration of different neural network types to tackle the complex nature of financial time series data. We find out that integrating different models can leverage the strengths of each architecture. Our best model, combining LSTM and GRU, effectively utilized the strengths of both architectures, providing superior performance in capturing the long-term and short-term dependencies necessary for accurate stock price predictions. 
 
+One significant limitation was the inherent volatility and unpredictability of the stock market, which often introduces noise that can affect model performance. Additionally, our models primarily relied on historical stock prices, excluding other potentially influential factors like market sentiment or macroeconomic indicators. Furthermore, the introduction of an attention layer in the GRU + LSTM architecture did not yield the expected improvements, largely because attention mechanisms are better suited for tasks with long-range dependencies, unlike the patterns typically found in stock price movements. Moreover, the complexity added by attention layers can increase sensitivity to noise. It is important to note that our model is designed to predict current stock prices based on existing data and does not forecast future stock price movements.
+
+Future work  lies on 1) Enhancing the model with a broader set of features, including macroeconomic indicators, market sentiment data, and technical indicators, to capture a more comprehensive array of factors influencing stock prices; 2) Developing real-time data analysis capabilities to adapt the models for use in dynamic trading environments, thereby increasing their practical utility in real-world scenarios; 3) Expanding the dataset to include a wider variety of stocks from multiple sectors and geographies to enhance the robustness and generalizability of the models; 4) Investigating the effects of significant market movements, such as large-scale buys and sells, on stock prices to enhance predictive accuracy under volatile conditions.
